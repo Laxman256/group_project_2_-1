@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        nav {
+            background-color: #444;
+            text-align: center;
+            padding: 5px 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        table {
+            width: 100%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hotel Data</h1>
+    </header>
+    <nav>
+        <a href=\home.html>Home</a>
+        
+        <a href=\about.html>About</a>
+    </nav>
+    <table>
+        <thead>
+            <tr>
+                <th>Hotel</th>
+                <th>Is Canceled</th>
+                <th>Arrival Year</th>
+                <th>Arrival Month</th>
+                <th>Adults</th>
+                <th>Children</th>
+                <th>Babies</th>
+                <th>Country</th>
+                <th>Reserved Room Type</th>
+                <th>Assigned Room Type</th>
+                <th>Reservation Status</th>
+                <th>Status Date</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in hotel_data %}
+                <tr>
+                    <td>{{ data['hotel'] }}</td>
+                    <td>{{ data['is_canceled'] }}</td>
+                    <td>{{ data['arrival_date_year'] }}</td>
+                    <td>{{ data['arrival_date_month'] }}</td>
+                    <td>{{ data['adults'] }}</td>
+                    <td>{{ data['children'] }}</td>
+                    <td>{{ data['babies'] }}</td>
+                    <td>{{ data['country'] }}</td>
+                    <td>{{ data['reserved_room_type'] }}</td>
+                    <td>{{ data['assigned_room_type'] }}</td>
+                    <td>{{ data['reservation_status'] }}</td>
+                    <td>{{ data['reservation_status_date'] }}</td>
+                    <td>{{ data['name'] }}</td>
+                    <td>{{ data['email'] }}</td>
+                    <td>{{ data['phone_number'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
